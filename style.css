@@ -1,0 +1,67 @@
+body {
+  overflow-x: hidden;
+  background-color: #000;
+  height: 1200px;
+}
+
+.container {
+  height: 100%;
+}
+
+.tower {
+  position: absolute;
+}
+
+.layer-1 {
+  top: 0px;
+}
+
+.layer-2 {
+  left: 0px;
+  top: 0px;
+}
+
+.layer-3 {
+  left: 0px;
+  top: 0px;
+}
+
+.layer-4 {
+  left: 0px;
+  top: 0px;
+}
+
+.light-1 {
+  position: absolute;
+  transform-origin: 304px 313px;
+  animation: rotation 7s infinite linear;
+  left: 0%;
+  top: 0%;
+
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(-360deg);
+  }
+}
+  
+
+.light-2 {
+  position: absolute;
+  transform-origin: 304px 313px;
+  animation: scaling 1s infinite linear;
+
+  left: 0%;
+  top: 0%;
+}
+
+@keyframes scaling {
+  50% {
+    transform: scale(90%);
+  }
+  
+  100% {
+    transform: scale(100%);
+  }
+}
