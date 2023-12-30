@@ -2,6 +2,7 @@
 
   <head> 
     <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
   </head>
 
   <div class="tower layer-4">
@@ -23,8 +24,26 @@
     <img src="https://file.garden/ZXoYW8qZfDccLwuG/reveal1l1.png">
   </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-  <script src="animImg.js"></script>
-  
- 
+  <script>
+  $(function() {
+
+    var container = document.getElementById('container');
+    var windowHeight = window.innerHeight;
+    var windowWidth = window.innerWidth;
+    var scrollArea = 1000 - windowHeight;
+
+    window.addEventListener('scroll', function() {
+      var scrollTop = window.pageYOffset || window.scrollTop;
+      var scrollPercent = scrollTop / scrollArea || 0;
+      
+      for (let i = 0; i < 4; i++) {
+      	var tower = document.getElementsByClassName('tower')[i];
+        tower.style.top = scrollPercent*window.innerHeight/(2 *(i+1)) + 'px';
+      }
+
+    });
+
+  });
+  </script>
+
 </div>
