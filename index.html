@@ -31,16 +31,21 @@
     var windowHeight = window.innerHeight;
     var windowWidth = window.innerWidth;
     var scrollArea = 1000 - windowHeight;
-
+    var tower1 = document.getElementsByClassName('tower')[0];
+    var tower2 = document.getElementsByClassName('tower')[1];
+    var tower3 = document.getElementsByClassName('tower')[2];
+    var tower4 = document.getElementsByClassName('tower')[3];
+    
     window.addEventListener('scroll', function() {
       var scrollTop = window.pageYOffset || window.scrollTop;
       var scrollPercent = scrollTop / scrollArea || 0;
       
-      for (let i = 0; i < 4; i++) {
-      	var tower = document.getElementsByClassName('tower')[i];
-        tower.style.top = scrollPercent*window.innerHeight/(2 *(i+1)) + 'px';
-      }
-
+    
+    
+      tower1.style.top = scrollPercent*window.innerHeight/2 + 'px';
+      tower2.style.top = scrollPercent*window.innerHeight/4 + 'px';
+      tower3.style.top = scrollPercent*window.innerHeight/6 + 'px';
+      tower4.style.top = scrollPercent*window.innerHeight/8 + 'px';
     });
 
   });
